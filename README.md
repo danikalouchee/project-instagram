@@ -9,7 +9,7 @@ The **Project Instagram** is a **Web application** <br />
 **UNLIKE** other unfollower applications on mobile that require payment and provide very limited functionality <br />
 **OUR PRODUCT** provides very in depth analytical trends and data patterns at no cost and at an easier accessible platform (web). <br />
 
-##Personas
+## Personas <br />
 **Adelina, a college student** <br />
 Adelina, age 20, is a college student attending Temple University in Philadelphia. She is involved in various different social clubs on campus and is in a major that requires a lot of networking and connections. Adelina's instagram profile is very important to her because she uses that as her image online where if people look her up, they will recieve her first impressions of her on there. Since Adelina is using instagram as a marketing tool to sell herself, it is very important she sees how her profile is doing including to see if pictures she post attract followers or detract followers. Adelina would also want to know who unfollows her in order to get a scope of who still wants to remain in her network and who does not. As a generation Z human being, Adelina is a very heavy user on instagram and uses it for her personal endeavors as well. Many of her friends and people her age are on instagram frequently. Adelina would benefit from the statistical app because it would give her awareness of her profile, figure out what posting behaviors grow her profile and which do not. 
 <br />
@@ -23,6 +23,15 @@ Bertha, age 16, is a girl in high school who's primary motives at this age are t
 **Markus, a new business owner** <br />
 Markus, age 32, is a man who is starting a brand new home owned business in town. He went to University, worked, and then decided he wanted to make his own business. Now that we live in the digital age, the best way to attract customers and gain traction is through social media. Markus would be able have a standing online and would be able to be known throughout town fast by his social media presence. Digital awareness for his business is important because that could determine the success of his business. Markus would benefit well from the instagram project because he would be able to make a page for his business and gain followers and traction in order to drum up some business. He could use it to put promos and special events for his business as well. These different business tactics can be figured out in order to understand what works and what does not in order to grow his business. He would be able to increase the success of his business ten fold through the use of this application. <br />
 
+## Feature List <br />
+* Login to Instagram Account
+* View new Followers
+* View unfollowers
+* View Trends over time
+* Gather data regarding profile
+* See growth of profile
+
+<br />
 
 
 
