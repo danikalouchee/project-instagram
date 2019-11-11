@@ -1,6 +1,6 @@
-#Project Instagram 
+# Project Instagram 
 
-##Product Vision <br />
+## Product Vision <br />
 
 **FOR**: Instagram influencers and general useres <br />
 **WHO** need general analytical insight, track followers, unfollowers, and trends based on the statistics of their profiles: <br />
