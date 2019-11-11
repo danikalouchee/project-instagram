@@ -33,5 +33,7 @@ Markus, age 32, is a man who is starting a brand new home owned business in town
 
 <br />
 
-
+## Language and Developer Environment <br />
+**Languages**: Javascript, HTML, CSS <br />
+**Environment**: Sublime Web editor hosted on Python Server/ViolentMonkey Chrome plugin
 
