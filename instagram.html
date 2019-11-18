@@ -1,66 +1,95 @@
+
 <!DOCTYPE html>
 <html>
+    <head>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
 
-<head>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
-</head>
+        <title>Instagram Tracker</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    </head>
+    <body>
 
-<body>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">
+                    <img alt= "InstaTracker" src="icons/insta.png" width="44" height="44" style="position:absolute;left:-6px; top:1px;">
+                    </a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">Analytics</a></li>
+                    <li><a href="#">Log On</a></li>
+                </ul>
+            </div>
+        </nav>
 
+        <div class="jumbotron text-center">
+            <h1>Instagram Tracker</h1>
+            <p>Created By: Kamelya Kalouche, Shakthi Panner, Max Goroshko, Andrey Sidorov </p> 
+        </div>
 
-    <div class="container">
-        <h3>Total Following : <strong class="instagram"></strong></h3>
-    </div>
-    <div class="container">
-        <h3>Total Followers : <strong class="followers"></strong></h3>
-    </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <h3>Total Following</h3>
+                    <p><strong class="instagram"></strong></p>
+                    <h3>Total Followers</h3>
+                    <strong class="followers"></strong>
+                </div>
+                <div class="col-sm-4">
+                    <h3>History Of Likes</h3>
+                    <strong class="likeHistory"></strong>
+                </div>
+            </div>
+        </div>
 
-   <div class="container">
-        <h3>History of Likes: <strong class="likeHistory"></strong></h3>
-    </div>
+        <script type="text/javascript">
 
- <script type="text/javascript">
+            var token = "262002496.1677ed0.5cd6baeee9f84ec9984b7e4b43b58c3a"
 
- 	var token = "262002496.1677ed0.5cd6baeee9f84ec9984b7e4b43b58c3a"
+            $.ajax({
+                url: 'https://api.instagram.com/v1/users/self',
+                type: 'GET',
+                data: {
+                    access_token: token
+                },
+                success: function (data) {
+                    var following = data['data']['counts']['follows'];
+                    var followers = data['data']['counts']['followed_by'];
+                    $(".instagram").text(following);
+                    $(".followers").text(followers);
 
-$.ajax({
-    url: 'https://api.instagram.com/v1/users/self',
-    type: 'GET',
-    data: {
-        access_token: token
-    },
-    success: function(data) {
-        var following = data['data']['counts']['follows'];
-        var followers = data['data']['counts']['followed_by'];
-        $(".instagram").text(following);
-        $(".followers").text(followers);
+                    console.log(following);
+                    console.log(followers);
+                },
+                error: function (data) {
+                    console.log("build fail");
+                }
+            })
 
-        console.log(following);
-        console.log(followers);
-    },
-    error: function(data) {
-        console.log("build fail");
-    }
-})
+            $.ajax({
+                url: 'https://api.instagram.com/v1/users/self/media/recent',
+                type: 'GET',
+                data: {
+                    access_token: token
+                },
+                success: function (data) {
+                    var likeDataSet = [];
+                    var recentLikes = data['data'];
+                    for (const post of recentLikes) {
+                        likeDataSet.push(post.likes.count);
+                        console.log(post.likes.count);
+                    }
+                    $(".likeHistory").text(likeDataSet);
+                }
+            })
 
-$.ajax({
-	url:'https://api.instagram.com/v1/users/self/media/recent',
-	type: 'GET',
-	data: {
-		access_token: token
-	},
-	success: function(data) {
-		var likeDataSet = [];
-		var recentLikes = data['data'];
-		for(const post of recentLikes) {
-			likeDataSet.push(post.likes.count);
-			console.log(post.likes.count);
-		}
-		$(".likeHistory").text(likeDataSet);
-	}
-})
+        </script>
 
- </script>
-
-</body>
+    </body>
 </html>
