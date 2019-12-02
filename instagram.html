@@ -38,23 +38,19 @@
             <div class="row">
                 <div class="col-sm-4">
                     <h3>Total Following</h3>
-                    <p><strong class="instagram"></strong></p>
-                    <h3>Total Followers</h3>
-                    <strong class="followers"></strong>
+                    <p id="instagram" ><strong class="instagram"></strong></p>
+                    <h3 >Total Followers</h3>
+                    <p id="followers"><strong class="followers"></strong></p>
                 </div>
-<!--                 <div class="col-sm-4">
-                    <h3>History Of Likes</h3>
-                    <strong class="likeHistory"></strong>
-                </div> -->
                 <div class="col-sm-4">
                     <h3>Username</h3>
-                    <strong class="user"></strong>
+                    <p id="user"><strong class="user"></strong></p>
 
                 </div>
                 <div class="col-sm-4">
                     <h3>Full Name</h3>
 
-                    <strong class="fullname"></strong>
+                    <p id="fullname"><strong  class="fullname"></strong></p>
                 </div>
 
             </div>
@@ -63,53 +59,7 @@
             </div>
         </div>
 
-        <script type="text/javascript">
-            var token = "262002496.1677ed0.5cd6baeee9f84ec9984b7e4b43b58c3a"
-            $.ajax({
-                url: 'https://api.instagram.com/v1/users/self',
-                type: 'GET',
-                data: {
-                    access_token: token
-                },
-                success: function (data) {
-                    var following = data['data']['counts']['follows'];
-                    var followers = data['data']['counts']['followed_by'];
-                    var profilePicture = data['data']['username'];
-                    var user = data['data']['username'];
-                    var fullname = data['data']['full_name'];
-                    $(".instagram").text(following);
-                    $(".followers").text(followers);
-                    $(".propic").text(profilePicture);
-                    $(".user").text(user);
-                    $(".fullname").text(fullname);
-
-                    console.log(user);
-                    console.log(fullname);
-                    console.log(following);
-                    console.log(followers);
-                },
-                error: function (data) {
-                    console.log("build fail");
-                }
-            })
-            $.ajax({
-                url: 'https://api.instagram.com/v1/users/self/media/recent',
-                type: 'GET',
-                data: {
-                    access_token: token
-                },
-                success: function (data) {
-                    var likeDataSet = [];
-                    var recentLikes = data['data'];
-                    for (const post of recentLikes) {
-                        likeDataSet.push(post.likes.count);
-                        console.log(post.likes.count);
-                    }
-                    $(".likeHistory").text(likeDataSet);
-                }
-            })
-
-        </script>
+        <script src="instagramJS.js"></script>
 
     </body>
 </html>
