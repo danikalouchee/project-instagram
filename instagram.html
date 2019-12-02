@@ -8,58 +8,204 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    </head>
-    <body>
 
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="#">
-                    <img alt= "InstaTracker" src="icons/insta.png" width="44" height="44" style="position:absolute;left:-6px; top:1px;">
+        <!-- Bootstrap Core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+        <!-- Fonts -->
+        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="css/animate.css" rel="stylesheet" />
+        <!-- Squad theme CSS -->
+        <link href="css/style.css" rel="stylesheet">
+        <link href="color/default.css" rel="stylesheet">
+    </head>
+    <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+        <!-- Preloader -->
+        <div id="preloader">
+            <div id="load"></div>
+        </div>
+
+        <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header page-scroll">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="index.html">
+                        <h1>INSTAGRAM ANALYTICS</h1>
                     </a>
                 </div>
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="analytics.html">Post History</a></li>
-                    <li><a href="profilefeedback.html">Profile Feedback</a></li>
-                    <li><a href="#">View Posts</a></li>
-                    <li><a href="#">Follower Growth</a></li>
-                </ul>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="#userInfo">User Information</a></li>
+                        <li><a href="#postHistory">Post History</a></li>
+                        <li><a href="profilefeedback.html">Profile Feedback</a></li>
+                        <li><a href="#">View Posts</a></li>
+                        <li><a href="#">Follower Growth</a></li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
             </div>
+            <!-- /.container -->
         </nav>
 
-        <div class="jumbotron text-center">
-            <h1>Instagram Analytics</h1>
-            <h4>Providing Insight for Growth & Success</h4>
-        </div>
+        <!-- Section: intro -->
+        <section id="intro" class="intro">
 
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-4">
-                    <h3>Total Following</h3>
-                    <p id="instagram" ><strong class="instagram"></strong></p>
-                    <h3 >Total Followers</h3>
-                    <p id="followers"><strong class="followers"></strong></p>
-                </div>
-                <div class="col-sm-4">
-                    <h3>Username</h3>
-                    <p id="user"><strong class="user"></strong></p>
-
-                </div>
-                <div class="col-sm-4">
-                    <h3>Full Name</h3>
-
-                    <p id="fullname"><strong  class="fullname"></strong></p>
-                </div>
-
+            <div class="slogan">
+                <h2>WELCOME TO <span class="text_color">INSTAGRAM ANALYTICS</span> </h2>
+                <h4>Providing Insight for Growth & Success</h4>
             </div>
-            <div>
-                <img src="">
+            <div class="page-scroll">
+                <a href="#userInfo" class="btn btn-circle">
+                    <i class="fa fa-angle-double-down animated"></i>
+                </a>
             </div>
-        </div>
+        </section>
+        <!-- /Section: intro -->
+
+        <!-- Section: userInfo -->
+        <section id="userInfo" class="home-section text-center">
+            <div class="heading-about">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="wow bounceInDown" data-wow-delay="0.4s">
+                                <div class="section-heading">
+                                    <h2>User Information</h2>
+                                    <i class="fa fa-2x fa-angle-down"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-2 col-lg-offset-5">
+                        <hr class="marginbot-50">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="wow bounceInUp" data-wow-delay="0.5s">
+                            <div class="team boxed-grey">
+                                <div class="inner">
+                                    <h5>Real Name</h5>
+                                    <p id="fullname"><strong  class="fullname"></strong></p>
+                                    <p class="subtitle" id="fullname"><strong  class="fullname"></strong></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="wow bounceInUp" data-wow-delay="0.8s">
+                            <div class="team boxed-grey">
+                                <div class="inner">
+                                    <h5>User Name</h5>
+                                    <p class="subtitle" id="user"><strong class="user"></strong></p>
+                                    <div class="avatar"><img src="img/team/3.jpg" alt="" class="img-responsive img-circle" /></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="wow bounceInUp" data-wow-delay="1s">
+                            <div class="team boxed-grey">
+                                <div class="inner">
+                                    <h5>Total Followers</h5>
+                                    <p class="subtitle" id="followers"><strong class="followers"></strong></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="wow bounceInUp" data-wow-delay="0.2s">
+                            <div class="team boxed-grey">
+                                <div class="inner">
+                                    <h5>Amount of Posts</h5>
+                                    <p class="subtitle" id="posts">insert post amount</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="wow bounceInUp" data-wow-delay="1s">
+                            <div class="team boxed-grey">
+                                <div class="inner">
+                                    <h5>Total Following</h5>
+                                    <p class="subtitle" id="instagram" ><strong class="instagram"></strong></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /Section: userInfo -->
+
+
+
+
+        <!-- Section: postHistory -->
+        <section id="postHistory" class="home-section text-center bg-gray">
+
+            <div class="heading-about">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="wow bounceInDown" data-wow-delay="0.2s">
+                                <div class="section-heading">
+                                    <h2>Post History</h2>
+                                    <i class="fa fa-2x fa-angle-down"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2 col-lg-offset-5">
+                        <hr class="marginbot-50">
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-1">
+                        <div class="wow bounceInUp" data-wow-delay="0.3s">
+                            <div class="team boxed-grey">
+                                <div class="inner">
+                                    <canvas id="Growth" width="1100" height="700" ></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /Section: postHistory -->
+
+
+
 
         <script src="instagramJS.js"></script>
+        <script src="analyticsJS.js"></script>
+        <script src="Chart.js"></script>
+        <!-- Core JavaScript Files -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.easing.min.js"></script>
+        <script src="js/jquery.scrollTo.js"></script>
+        <script src="js/wow.min.js"></script>
+        <!-- Custom Theme JavaScript -->
+        <script src="js/custom.js"></script>
+        <script src="contactform/contactform.js"></script>
 
     </body>
 </html>
