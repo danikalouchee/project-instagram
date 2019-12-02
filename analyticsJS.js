@@ -12,6 +12,7 @@ request.open('GET',url + '?' +param , true)
 request.onload = function() {
     // Begin accessing JSON data here
     var data = JSON.parse(this.response)
+    console.log(data)
     for (var i = 0; i < 20; i++) {
         likeDataSet.push(data.data[i].likes.count);
     }
