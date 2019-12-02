@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <!--jquery library-->    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>      
+    <!--chart-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>                       
+     <!--bootstrap used-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">           
 	<script src="Chart.js"></script>
 	
 </head>
 
 <body>
 
-	<nav class="navbar navbar-default">
+    <!--Navigation menu-->
+    <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="#">
                     <img alt= "InstaTracker" src="icons/insta.png" width="44" height="44" style="position:absolute;left:-6px; top:1px;">
                     </a>
                 </div>
+                <!--Referecing the menu buttons to file pages-->
                 <ul class="nav navbar-nav">
                     <li><a href="instagram.html">Home</a></li>
                     <li><a href="analytics.html">Post History</a></li>
@@ -28,10 +33,12 @@
         </nav>
 
         <div class="jumbotron text-center">
-            <h1>Instagram Analytics</h1>
+            //Header for the main page
+            <h1>Instagram Analytics</h1>                        
             <h4>Providing Insight for Growth & Success</h4>
         </div>
-<canvas id="Growth" width="1900" height="900" ></canvas>
+<!--Growth real time table initialization size-->
+<canvas id="Growth" width="1900" height="900" ></canvas>        
 
 </body>
 </html>
