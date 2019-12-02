@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+	//<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+	<script src="Chart.js"></script>
+	
+</head>
+<body>
+
+<canvas id="Growth" width="1900" height="900" ></canvas>
+
+</body>
+</html>
+
+
+<script type="text/javascript">
+
+	//Aquire Data from Profile
+	var token = "262002496.1677ed0.5cd6baeee9f84ec9984b7e4b43b58c3a" //user token
+	var likeDataSet = [];
+	var dataLength = [1];
+		//Likes from profile
+	$.ajax({
+                url: 'https://api.instagram.com/v1/users/self/media/recent',
+                type: 'GET',
+                data: {
+                    access_token: token
+                },
+                success: profileLikes 
+            })
+	
+	function profileLikes(data) {
+		
+                    var recentLikes = data['data'];
+                    for (const post of recentLikes) {
+                        likeDataSet.push(post.likes.count);
+                        //console.log(post.likes.count);
+                        
+                    }
+                    for (var i = 0; i < likeDataSet.length; i++) {
+                    	dataLength.push[i+1];
+                    }
+                    $(".likeHistory").text(likeDataSet);
+                    $(".dataLength").text(dataLength);
+	}
+
+	
+	var ct = document.getElementById('Growth');
+	console.log(ct);
+
+	var lineChart = new Chart(ct, {
+		type: 'line',
+		data: {
+			labels: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],
+			datasets: [
+				{
+					label: "Like History",
+					fill: true,
+					data: [343,347,224,318,242,316,260,362,265,220,205,142,298,254,294,125,217,188,160,267]
+				}
+			]
+		},
+		options: {
+			responsive: false
+		}
+	})
+	
+
+
+</script>
