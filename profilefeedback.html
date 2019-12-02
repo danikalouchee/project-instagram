@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+
+        <title>Instagram Tracker</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    </head>
+<body>
+
+	<nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">
+                    <img alt= "InstaTracker" src="icons/insta.png" width="44" height="44" style="position:absolute;left:-6px; top:1px;">
+                    </a>
+                </div>
+                <ul class="nav navbar-nav">
+                  <li><a href="instagram.html">Home</a></li>
+                    <li><a href="analytics.html">Post History</a></li>
+                    <li><a href="profilefeedback.html">Profile Feedback</a></li>
+                    <li><a href="#">View Posts</a></li>
+                    <li><a href="#">Follower Growth</a></li>
+                </ul>
+            </div>
+        </nav>
+	        <div class="jumbotron text-center">
+            <h1>Profile Feedback</h1>
+            <h4>Run Algorithms to Recieve Profile Feedback</h4>
+        </div>
+
+
+	<button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#exampleModal">Profile Analysis</button>
+
+	<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Overall Analysis: Healthy</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Your profile is recieving a healthy amount of likes. A couple notes to observe is that your profile has grown over time but you are quickly reaching a plateau. We detect a recent average of 300 likes and find that the content you are posting is generating likes but not further growth. We reccomend posting similar content to 8 posts ago as we noticed the largest increase then. 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>
+
+<script src="profilefeedbackJS.js"></script>

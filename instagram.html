@@ -1,76 +1,65 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
-    
-    <title>Instagram Tracker</title>
-    <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+
+        <title>Instagram Tracker</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-          </head>
-  <body>
-    
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#">NavBar</a>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">
+                    <img alt= "InstaTracker" src="icons/insta.png" width="44" height="44" style="position:absolute;left:-6px; top:1px;">
+                    </a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="analytics.html">Post History</a></li>
+                    <li><a href="profilefeedback.html">Profile Feedback</a></li>
+                    <li><a href="#">View Posts</a></li>
+                    <li><a href="#">Follower Growth</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="jumbotron text-center">
+            <h1>Instagram Analytics</h1>
+            <h4>Providing Insight for Growth & Success</h4>
         </div>
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">Graphs</a></li>
-          <li><a href="#">Stats</a></li>
-          <li><a href="#">Log on</a></li>
-        </ul>
-      </div>
-    </nav>
-    
-    <div class="jumbotron text-center">
-      <h1>Instagram Tracker</h1>
-      <p>Created By: </p>
-    </div>
-    
-    
-    
-    
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-4">
-          <h3>Total Following</h3>
-          <p><strong class="instagram"></strong></p>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <h3>Total Following</h3>
+                    <p id="instagram" ><strong class="instagram"></strong></p>
+                    <h3 >Total Followers</h3>
+                    <p id="followers"><strong class="followers"></strong></p>
+                </div>
+                <div class="col-sm-4">
+                    <h3>Username</h3>
+                    <p id="user"><strong class="user"></strong></p>
+
+                </div>
+                <div class="col-sm-4">
+                    <h3>Full Name</h3>
+
+                    <p id="fullname"><strong  class="fullname"></strong></p>
+                </div>
+
+            </div>
+            <div>
+                <img src="">
+            </div>
         </div>
-        <div class="col-sm-4">
-          <h3>Total Followers</h3>
-          <strong class="followers"></strong>
-        </div>
-        <div class="col-sm-4">
-          <h3>Column 3</h3>
-          <p>...</p>
-          <p>...</p>
-        </div>
-      </div>
-    </div>
-    
-    <script type="text/javascript">
-      var token = "262002496.1677ed0.5cd6baeee9f84ec9984b7e4b43b58c3a"
-      $.ajax({
-             url: 'https://api.instagram.com/v1/users/self',
-             type: 'GET',
-             data: {access_token: token},
-             success: function (data) {
-             var following = data['data']['counts']['follows'];
-             var followers = data['data']['counts']['followed_by'];
-             $(".instagram").text(following);
-             $(".followers").text(followers);
-             console.log(following);
-             console.log(followers);
-             },
-             error: function (data) {
-             console.log("build fail");
-             }
-             })
-      </script>
-    
-  </body>
+
+        <script src="instagramJS.js"></script>
+
+    </body>
 </html>
