@@ -3,22 +3,20 @@
 <html>
     <head>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
-
-        <title>Instagram Tracker</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
         <!-- Bootstrap Core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-
         <!-- Fonts -->
         <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="css/animate.css" rel="stylesheet" />
         <!-- Squad theme CSS -->
         <link href="css/style.css" rel="stylesheet">
         <link href="color/default.css" rel="stylesheet">
+        <title>Instagram Tracker</title>
     </head>
     <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
         <!-- Preloader -->
@@ -41,11 +39,12 @@
                 <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#userInfo">User Information</a></li>
+                        <li><a href="#userInfo">User Info</a></li>
                         <li><a href="#postHistory">Post History</a></li>
+                        <li><a href="#friends">Top Friends</a></li>
+                        <li><a href="#comment">Comment Trend</a></li>
                         <li><a href="profilefeedback.html">Profile Feedback</a></li>
-                        <li><a href="#">View Posts</a></li>
-                        <li><a href="#">Follower Growth</a></li>
+                        <li><a href="#">Recent Posts</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -76,7 +75,7 @@
                         <div class="col-lg-8 col-lg-offset-2">
                             <div class="wow bounceInDown" data-wow-delay="0.4s">
                                 <div class="section-heading">
-                                    <h2>User Information</h2>
+                                    <h2 style="color: #5aa2e9;" >User Information</h2>
                                     <i class="fa fa-2x fa-angle-down"></i>
                                 </div>
                             </div>
@@ -85,20 +84,13 @@
                 </div>
             </div>
             <div class="container">
-
-                <div class="row">
-                    <div class="col-lg-2 col-lg-offset-5">
-                        <hr class="marginbot-50">
-                    </div>
-                </div>
                 <div class="row">
                     <div class="col-md-3">
                         <div class="wow bounceInUp" data-wow-delay="0.5s">
                             <div class="team boxed-grey">
                                 <div class="inner">
-                                    <h5>Real Name</h5>
-                                    <p id="fullname"><strong  class="fullname"></strong></p>
-                                    <p class="subtitle" id="fullname"><strong  class="fullname"></strong></p>
+                                    <h5 style="color: #7d67d7;">Real Name</h5>
+                                    <p class="subtitle" id="fullname" style="color: black;" ><strong  class="fullname"></strong></p>
                                 </div>
                             </div>
                         </div>
@@ -108,8 +100,8 @@
                         <div class="wow bounceInUp" data-wow-delay="0.8s">
                             <div class="team boxed-grey">
                                 <div class="inner">
-                                    <h5>User Name</h5>
-                                    <p class="subtitle" id="user"><strong class="user"></strong></p>
+                                    <h5 style="color: #7d67d7;" >User Name</h5>
+                                    <p class="subtitle" id="user" style="color: black;" ><strong class="user"></strong></p>
                                     <div id="avatar" class="img-responsive img-circle"></div>
                                 </div>
                             </div>
@@ -119,8 +111,8 @@
                         <div class="wow bounceInUp" data-wow-delay="1s">
                             <div class="team boxed-grey">
                                 <div class="inner">
-                                    <h5>Total Followers</h5>
-                                    <p class="subtitle" id="followers"><strong class="followers"></strong></p>
+                                    <h5 style="color: #7d67d7;" >Total Followers</h5>
+                                    <p class="subtitle" id="followers" style="color: black;" ><strong class="followers"></strong></p>
                                 </div>
                             </div>
                         </div>
@@ -129,8 +121,8 @@
                         <div class="wow bounceInUp" data-wow-delay="0.2s">
                             <div class="team boxed-grey">
                                 <div class="inner">
-                                    <h5>Amount of Posts</h5>
-                                    <p class="subtitle" id="posts" class="posts" ></p>
+                                    <h5 style="color: #7d67d7;" >Amount of Posts</h5>
+                                    <p class="subtitle" id="posts" class="posts" style="color: black;" ></p>
                                 </div>
                             </div>
                         </div>
@@ -139,8 +131,8 @@
                         <div class="wow bounceInUp" data-wow-delay="1s">
                             <div class="team boxed-grey">
                                 <div class="inner">
-                                    <h5>Total Following</h5>
-                                    <p class="subtitle" id="instagram" ><strong class="instagram"></strong></p>
+                                    <h5 style="color: #7d67d7;" >Total Following</h5>
+                                    <p class="subtitle" id="instagram" style="color: black;" ><strong class="instagram"></strong></p>
                                 </div>
                             </div>
                         </div>
@@ -149,7 +141,6 @@
             </div>
         </section>
         <!-- /Section: userInfo -->
-
 
 
 
@@ -162,7 +153,7 @@
                         <div class="col-lg-8 col-lg-offset-2">
                             <div class="wow bounceInDown" data-wow-delay="0.2s">
                                 <div class="section-heading">
-                                    <h2>Post History</h2>
+                                    <h2 style="color: #5aa2e9;" >Post History</h2>
                                     <i class="fa fa-2x fa-angle-down"></i>
                                 </div>
                             </div>
@@ -171,11 +162,6 @@
                 </div>
             </div>
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-2 col-lg-offset-5">
-                        <hr class="marginbot-50">
-                    </div>
-                </div>
                 
                 <div class="row">
                     <div class="col-md-1">
@@ -192,16 +178,64 @@
         </section>
         <!-- /Section: postHistory -->
 
+        <!-- Section: friends -->
+        <section id="friends" class="home-section text-center">
+                <div class="heading-about">
+                <div class="container">
+                    <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="wow bounceInDown" data-wow-delay="0.4s">
+                        <div class="section-heading">
+                            <h2 style="color: #5aa2e9;" >Top Friends</h2>
+                            <i class="fa fa-2x fa-angle-down"></i>
 
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                    <div class="wow bounceInUp" data-wow-delay="0.2s">
+                        <div class="team boxed-grey">
+                        <div class="inner">
+                            <h5 style="color: #7d67d7;" >#1 Best Friend</h5>
+                            <p class="subtitle" id="bestFriend1" style="color: black;" ></p>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col-md-4">
+                    <div class="wow bounceInUp" data-wow-delay="0.5s">
+                        <div class="team boxed-grey">
+                        <div class="inner">
+                            <h5 style="color: #7d67d7;" >#2 Best Friend</h5>
+                            <p class="subtitle" id="bestFriend2" style="color: black;" ></p>
 
-
-
-
-
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col-md-4">
+                    <div class="wow bounceInUp" data-wow-delay="0.8s">
+                        <div class="team boxed-grey">
+                        <div class="inner">
+                            <h5 style="color: #7d67d7;" >#3 Best Friend</h5>
+                            <p class="subtitle" id="bestFriend3" style="color: black;" ></p>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </section>
+        <!-- /Section: friend -->
 
 
         <!-- Section: comments -->
-        <section id="comments" class="home-section text-center bg-gray">
+        <section id="comment" class="home-section text-center bg-gray">
 
                 <div class="heading-about">
                     <div class="container">
@@ -209,7 +243,7 @@
                             <div class="col-lg-8 col-lg-offset-2">
                                 <div class="wow bounceInDown" data-wow-delay="0.2s">
                                     <div class="section-heading">
-                                        <h2>Comment Trend</h2>
+                                        <h2 style="color: #5aa2e9;" >Comment Trend</h2>
                                         <i class="fa fa-2x fa-angle-down"></i>
                                     </div>
                                 </div>
@@ -218,11 +252,6 @@
                     </div>
                 </div>
                 <div class="container">
-                    <div class="row">
-                        <div class="col-lg-2 col-lg-offset-5">
-                            <hr class="marginbot-50">
-                        </div>
-                    </div>
                     
                     <div class="row">
                         <div class="col-md-1">
@@ -240,18 +269,10 @@
             <!-- /Section: comments -->
 
 
-
-
-
-
-
-
-
-
-
         <script src="instagramJS.js"></script>
         <script src="analyticsJS.js"></script>
         <script src="Chart.js"></script>
+        <script src="friendJS.js"></script>
         <!-- Core JavaScript Files -->
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
