@@ -15,7 +15,7 @@ var request = new XMLHttpRequest()
     document.getElementById('user').textContent = data.data.username
     document.getElementById('fullname').textContent = data.data.full_name
     document.getElementById('posts').textContent = data.data.counts.media
-    //document.getElementById('avatar').textContent = data.data.profile_picture
+    
     var img = document.createElement("img");
     img.src = data.data.profile_picture;
     var src = document.getElementById("avatar")
