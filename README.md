@@ -24,9 +24,8 @@ Bertha, age 16, is a girl in high school who's primary motives at this age are t
 Markus, age 32, is a man who is starting a brand new home owned business in town. He went to University, worked, and then decided he wanted to make his own business. Now that we live in the digital age, the best way to attract customers and gain traction is through social media. Markus would be able have a standing online and would be able to be known throughout town fast by his social media presence. Digital awareness for his business is important because that could determine the success of his business. Markus would benefit well from the instagram project because he would be able to make a page for his business and gain followers and traction in order to drum up some business. He could use it to put promos and special events for his business as well. These different business tactics can be figured out in order to understand what works and what does not in order to grow his business. He would be able to increase the success of his business ten fold through the use of this application. <br />
 
 ## Feature List <br />
-* Login to Instagram Account
-* View new Followers
-* View unfollowers
+* View Closest Friends
+* View User Information
 * View Trends over time
 * Gather data regarding profile
 * See growth of profile
@@ -35,7 +34,10 @@ Markus, age 32, is a man who is starting a brand new home owned business in town
 
 ## Language and Developer Environment <br />
 **Languages**: Javascript, HTML, CSS <br />
-**Environment**: Sublime Web editor hosted on Python Server/ViolentMonkey Chrome plugin
+**Environment**: Local Host <br />
+
+## HOW TO RUN & Deploy <br />
+Since this project was under a smaller time constraint, we decided the best way to reproduce and potentially contribute back to the project is by downloading the program as a ZIP file, extracting and running it by double-clicking the "instagram.html" file. <br />
 
 ## Project Management <br />
 **Trello**: https://trello.com/b/awWYYCAl/instagram-unfollower-tracker
