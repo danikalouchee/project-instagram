@@ -7,20 +7,22 @@ var likeDataSet = [];
 var dataLength = [1];
 
 
-var request = new XMLHttpRequest()
-request.open('GET',url + '?' +param , true)
+var request = new XMLHttpRequest();
+request.open('GET',url + '?' +param , true);
 
 request.onload = function() {
     // Begin accessing JSON data here
-    var data = JSON.parse(this.response)
-    console.log(data)
+
+    var data = JSON.parse(this.response);
+    console.log(data);
     //pushing data from the page to the graph
     for (var i = 0; i < 20; i++) {
         likeDataSet.push(data.data[i].likes.count);
     }
-    likeDataSet = likeDataSet.reverse()
-    console.log(likeDataSet);
+    likeDataSet=likeDataSet.reverse();
     //analitycal chart for last 20 posts
+
+
     var lineChart = new Chart(ct, {
         type: 'line',
         data: {
@@ -31,15 +33,18 @@ request.onload = function() {
                 {
                     label: "Like History",
                     fill: true,
-                    data: likeDataSet
+                    backgroundColor: '#c9e8fa',
+                    borderColor: '#9cb2eb',
+                    pointBackgroundColor: '#7b68d7',
+                    data: likeDataSet 
                 }
             ]
         },
         options: {
             responsive: false
         }
-    })
-}
+    });
+};
     request.send()       
 //getting the posts info
 var ct = document.getElementById('Growth');
