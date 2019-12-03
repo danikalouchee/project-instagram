@@ -1,5 +1,8 @@
 //Instagram api and token (facebook)
-var token = "262002496.1677ed0.5cd6baeee9f84ec9984b7e4b43b58c3a"
+//dani
+var token = "17958203.1677ed0.fdbc1bcade154c1aa344e67ec7e012e6"
+//shock
+//var token = "262002496.1677ed0.5cd6baeee9f84ec9984b7e4b43b58c3a"
 var url = 'https://api.instagram.com/v1/users/self/media/recent'
 var param = "access_token="+token
 //initializing variables
