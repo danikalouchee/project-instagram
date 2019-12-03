@@ -19,6 +19,7 @@ request.onload = function() {
     for (var i = 0; i < 20; i++) {
         likeDataSet.push(data.data[i].likes.count);
     }
+
     likeDataSet=likeDataSet.reverse();
     //analitycal chart for last 20 posts
 

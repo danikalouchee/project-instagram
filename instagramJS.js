@@ -7,13 +7,20 @@ var request = new XMLHttpRequest()
     request.onload = function() {
     
     var data = JSON.parse(this.response)
+    console.log(data)
     console.log(data.data.id)
     
     document.getElementById('followers').textContent = data.data.counts.followed_by
     document.getElementById('instagram').textContent = data.data.counts.follows
     document.getElementById('user').textContent = data.data.username
     document.getElementById('fullname').textContent = data.data.full_name
-
+    document.getElementById('posts').textContent = data.data.counts.media
+    //document.getElementById('avatar').textContent = data.data.profile_picture
+    var img = document.createElement("img");
+    img.src = data.data.profile_picture;
+    var src = document.getElementById("avatar")
+    src.appendChild(img);
+    
     }
 
     request.send()
