@@ -4,7 +4,7 @@ var url = 'https://api.instagram.com/v1/users/self/media/recent'
 var param = "access_token="+token
 //initializing variables
 var likeDataSet = [];
-var dataLength = [1];
+var comentDataSet = [];
 
 
 var request = new XMLHttpRequest();
@@ -18,12 +18,14 @@ request.onload = function() {
     //pushing data from the page to the graph
     for (var i = 0; i < 20; i++) {
         likeDataSet.push(data.data[i].likes.count);
+        comentDataSet.push(data.data[i].comments.count)
     }
 
     likeDataSet=likeDataSet.reverse();
+    comentDataSet = comentDataSet.reverse();
     //analitycal chart for last 20 posts
 
-
+    var ct = document.getElementById('Growth');
     var lineChart = new Chart(ct, {
         type: 'line',
         data: {
@@ -45,7 +47,32 @@ request.onload = function() {
             responsive: false
         }
     });
+
+
+    var ct2 = document.getElementById('commentTrend');
+    var lineChart2 = new Chart(ct2, {
+        type: 'bar',
+        data: {
+            labels: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],
+            datasets: [
+                                    //enabling or disabling history on graph
+
+                {
+                    label: "Comments",
+                    fill: true,
+                    backgroundColor: '#c9e8fa',
+                    borderColor: '#9cb2eb',
+                    pointBackgroundColor: '#7b68d7',
+                    data: comentDataSet 
+                }
+            ]
+        },
+        options: {
+            responsive: false
+        }
+    });
+
+    
 };
     request.send()       
 //getting the posts info
-var ct = document.getElementById('Growth');
