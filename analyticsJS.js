@@ -17,7 +17,7 @@ request.onload = function() {
         likeDataSet.push(data.data[i].likes.count);
     }
     likeDataSet=likeDataSet.reverse()
-
+    
     var lineChart = new Chart(ct, {
         type: 'line',
         data: {
